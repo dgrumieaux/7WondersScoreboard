@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seven Wonders Scoresheet</title>
+    <!-- Bootstrap -->
+    <link href="js/libs/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="js/libs/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  
+  </head>
+  <body>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.1.0.js'></script>
+    <script src="js/libs/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+  
+  <script type='text/javascript'>
+    //automatically select text on field select
+    $(document).ready(function() {
+      $('input[type=text]').click(function() {
+        $(this).select();
+      });
+    });
+  
+  </script>
+  
+  <div id="sevenWonders" class="container">
+  
+    <h1>Seven Wonders Scoresheet</h1>
+    
+    
+	
+	<div class="row">
+		
+	</div>
+    
+	<table>
+      <caption>This is a scoresheet for a game of Seven Wonders.</caption>
+      <thead>
+        <tr>
+          <th>Player Initials</th>
+          <th>Military</th>
+          <th>Coin</th>
+          <th>Wonder</th>
+          <th>Blue</th>
+          <th>Yellow</th>
+          <th>Purple</th>
+          <th>Science</th>
+          <th>Total</th>
+          <th>Remove Player</th>
+        </tr>
+      </thead>
+	  <button data-bind="click : addPlayer">Add Player</button>
+      <tbody data-bind="foreach: players">
+        <tr>
+          <td><input data-bind="value: initials" class="input-mini" type="text" /></td>
+          <td><input data-bind="value: militaryScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+		  <td><input data-bind="value: coinScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: wonderScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: blueScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: yellowScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: purpleScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: scienceScore" class="input-mini" type="text" min="0" max="99" value="0" /></td>
+          <td><input data-bind="value: totalScore" class="input-mini" type="text" disabled="disabled" /></td>
+		  <td><a href="#" data-bind="click: $parent.removePlayer">Remove</a></td>
+		</tr>
+      </tbody>
+    </table>
+	
+    <div >
+      <div class="row">
+        
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/sevenWonders.js"></script>
+  
+  </div>
+  
+  
+  
+  
+  
+    
+  </body>
+</html>
